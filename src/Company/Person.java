@@ -1,6 +1,10 @@
 package Company;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 
 public class Person {
@@ -69,6 +73,11 @@ public class Person {
     public Calendar getBirthDate() {
         return birthDate;
     }
+    public String calendarFormat(Calendar cal){
+        String date = Integer.toString(cal.get(Calendar.DAY_OF_MONTH));
+        date += "/" + Integer.toString(cal.get(Calendar.MONTH)+1)+ "/" + Integer.toString(cal.get(Calendar.YEAR));
+        return date;
+    }
 
     public void setBirthDate(Calendar birthDate) {
         this.birthDate = birthDate;
@@ -115,11 +124,11 @@ public class Person {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", gender=" + getGender() +
-                ", birthDate=" + birthDate +
-                ", maritalStatus=" + getMaritalStatus() +
-                ", hasDriverLicence=" + getHasDriverLicence() +
+                ", gender=" + gender +
+                ", birthDate=" + calendarFormat(birthDate) +
+                ", maritalStatus=" + maritalStatus +
+                ", hasDriverLicence=" + hasDriverLicence +
                 '}';
     }
 
-    }
+}

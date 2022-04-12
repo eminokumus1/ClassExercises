@@ -50,9 +50,14 @@ public class SalesEmployee extends RegularEmployee {
 
     @Override
     public String toString() {
-        return "SalesEmployee{" +
-                "sales=" + sales + super.toString() +
-                ", numberOfSalesEmployees=" + numberOfSalesEmployees +
+        String salesInfo = "[";
+        for (Product product: sales){
+            salesInfo += product.toString()+", ";
+        }
+        salesInfo += "]";
+        return super.toString() +
+                "\n" +
+                salesInfo +
                 '}';
     }
 }

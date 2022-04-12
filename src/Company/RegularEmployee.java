@@ -2,20 +2,21 @@ package Company;
 
 import java.util.Calendar;
 
-public class RegularEmployee extends Employee{
+public class RegularEmployee extends Employee {
     private double performanceScore;
     private double bonus;
 
     public RegularEmployee(int id, String firstName, String lastName, String gender, Calendar birthDate,
                            String maritalStatus, String hasDriverLicense, double salary, Calendar hireDate,
-                           Department department,double performanceScore){
-        super(id,firstName,lastName,gender,birthDate,maritalStatus,hasDriverLicense,salary,hireDate,department);
+                           Department department, double performanceScore) {
+        super(id, firstName, lastName, gender, birthDate, maritalStatus, hasDriverLicense, salary, hireDate, department);
         this.performanceScore = performanceScore;
     }
-    public RegularEmployee(Employee employee, double performanceScore){
+
+    public RegularEmployee(Employee employee, double performanceScore) {
         super(employee.getId(), employee.getFirstName(), employee.getLastName(), employee.getGender(),
                 employee.getBirthDate(), employee.getMaritalStatus(), employee.getHasDriverLicence(),
-                employee.getSalary(), employee.getHireDate(),employee.getDepartment());
+                employee.getSalary(), employee.getHireDate(), employee.getDepartment());
         this.performanceScore = performanceScore;
     }
 
@@ -37,9 +38,9 @@ public class RegularEmployee extends Employee{
 
     @Override
     public String toString() {
-        return "RegularEmployee{" +super.toString()+
-                "performanceScore=" + performanceScore +
+        return super.toString() + "\n" +
+                "RegularEmployee Info [performanceScore=" + performanceScore +
                 ", bonus=" + bonus +
-                '}';
+                ']';
     }
 }

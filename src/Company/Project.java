@@ -41,10 +41,10 @@ public class Project {
     public void setState(String state) {
         if (Objects.equals(state, "Open")) {
             this.state = true;
-        } else if (Objects.equals(state, "False")) {
+        } else if (Objects.equals(state, "Close")) {
             this.state = false;
         } else {
-            System.out.println("Invalid input. Please enter 'Open'' or 'False'.");
+            System.out.println("Invalid input. Please enter 'Open'' or 'Close'.");
         }
     }
     public void close(){

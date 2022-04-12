@@ -34,8 +34,8 @@ public class Manager extends Employee {
         double unit = findUnit(regularEmployees);
         double bonus;
 
-        for (RegularEmployee e: regularEmployees
-             ) {
+        for (RegularEmployee e : regularEmployees
+        ) {
             bonus = unit * e.getSalary() * e.getPerformanceScore();
             e.setBonus(bonus);
         }
@@ -48,7 +48,7 @@ public class Manager extends Employee {
         ) {
             sum += e.getSalary() * e.getPerformanceScore();
         }
-        double unit = bonusBudget/sum;
+        double unit = bonusBudget / sum;
         return unit;
     }
 
@@ -70,9 +70,11 @@ public class Manager extends Employee {
 
     @Override
     public String toString() {
-        return "Manager{" + super.toString()+
-                "regularEmployees=" + regularEmployees +
-                ", bonusBudget=" + bonusBudget +
-                '}';
+        return "Manager[id=" + super.getId() +
+                "," + super.getFirstName() +
+                " " + super.getLastName() +
+                "# of Employees: " +
+                regularEmployees.size() + "]"
+                ;
     }
 }

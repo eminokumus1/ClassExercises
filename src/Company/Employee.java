@@ -16,7 +16,8 @@ public class Employee extends Person {
         this.department = department;
         numberOfEmployees++;
     }
-    public Employee(Person person, double salary, Calendar hireDate, Department department){
+
+    public Employee(Person person, double salary, Calendar hireDate, Department department) {
         super(person.getId(), person.getFirstName(), person.getLastName(), person.getGender(), person.getBirthDate(),
                 person.getMaritalStatus(), person.getHasDriverLicence());
         this.salary = salary;
@@ -56,25 +57,28 @@ public class Employee extends Person {
     public void setNumberOfEmployees(int numberOfEmployees) {
         this.numberOfEmployees = numberOfEmployees;
     }
-    public double raiseSalary(double percent){
-        if (percent>=0 && percent<=1){
-            salary += salary*percent;
-        }else{
+
+    public double raiseSalary(double percent) {
+        if (percent >= 0 && percent <= 1) {
+            salary += salary * percent;
+        } else {
             System.out.println("Invalid input. Please enter a number between 0 and 1.");
         }
         return salary;
     }
-    public double raiseSalary(int amount){
-        return salary+amount;
+
+    public double raiseSalary(int amount) {
+        return salary + amount;
     }
 
     @Override
     public String toString() {
-        return "Employee{" +super.toString()+
-                "salary=" + salary +
-                ", hireDate=" + hireDate +
-                ", department=" + department +
-                ", numberOfEmployees=" + numberOfEmployees +
-                '}';
+        return "Person Info [id=" + super.getId() +
+                ", firstName=" + super.getFirstName() +
+                ", lastName=" + super.getLastName() +
+                ", gender=" + super.getGender() + "]" + "\n" +
+                "Employee Info [salary=" + salary +
+                ", hireDate=" + hireDate + "]";
+
     }
 }

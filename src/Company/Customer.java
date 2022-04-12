@@ -7,11 +7,12 @@ public class Customer extends Person {
     private ArrayList<Product> products = new ArrayList();
 
     public Customer(int id, String firstName, String lastName, String gender,
-             Calendar birthDate, String maritalStatus, String hasDriverLicense, ArrayList<Product> products) {
+                    Calendar birthDate, String maritalStatus, String hasDriverLicense, ArrayList<Product> products) {
         super(id, firstName, lastName, gender, birthDate, maritalStatus, hasDriverLicense);
         this.products = products;
     }
-    public Customer(Person person, ArrayList<Product> products){
+
+    public Customer(Person person, ArrayList<Product> products) {
         super(person.getId(), person.getFirstName(), person.getLastName(), person.getGender(),
                 person.getBirthDate(), person.getMaritalStatus(), person.getHasDriverLicence());
         this.products = products;
@@ -27,8 +28,13 @@ public class Customer extends Person {
 
     @Override
     public String toString() {
-        return "Customer{" + super.toString()+
-                "products=" + products +
-                '}';
+        String productInfo = "[";
+        for (Product product : products) {
+            productInfo += product.toString() + ", ";
+        }
+        productInfo += "]";
+        return "Customer[id=" + super.getId() +
+                productInfo +
+                ']';
     }
 }

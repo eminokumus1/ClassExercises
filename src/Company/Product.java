@@ -36,6 +36,6 @@ public class Product {
     }
 
     public String toString() {
-        return "Product[name=" + productName + ",sale date=" + saleDate + ",price=" + price + "]";
+        return "Product[productName=" + productName + ",transactionDate=" + saleDate + ",price=" + price + "]";
     }
 }

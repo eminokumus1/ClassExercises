@@ -24,7 +24,8 @@ public class Department {
     public void setDepartmentName(String departmentName) {
         this.departmentName = departmentName;
     }
-    public String toString(){
-        return "Department[id="+departmentId+",name="+departmentName+"]";
+
+    public String toString() {
+        return "Department[departmentId=" + departmentId + ",departmentName=" + departmentName + "]";
     }
 }

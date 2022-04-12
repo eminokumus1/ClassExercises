@@ -18,7 +18,8 @@ public class Developer extends RegularEmployee{
     public Developer(RegularEmployee re, ArrayList<Project> projects){
         super(re.getId(), re.getFirstName(), re.getLastName(), re.getGender(), re.getBirthDate(),
                 re.getMaritalStatus(), re.getHasDriverLicence(), re.getSalary(), re.getHireDate(),
-                re.getDepartment(), re.getPerformanceScore());
+                re.getDepartment(), re.getPerformanceScore())
+        ;
         this.projects = projects;
         numberOfDevelopers++;
     }
@@ -47,9 +48,12 @@ public class Developer extends RegularEmployee{
 
     @Override
     public String toString() {
-        return "Developer{" + super.toString()+
-                "projects=" + projects +
-                ", numberOfDevelopers=" + numberOfDevelopers +
-                '}';
+        String projectInfo = "[";
+        for (Project project:projects){
+            projectInfo += project.toString()+", ";
+        }
+        projectInfo += "]";
+        return super.toString()+ "\n" +
+               projectInfo ;
     }
 }
